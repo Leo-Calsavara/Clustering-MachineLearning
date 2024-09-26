@@ -33,11 +33,16 @@ been coded as integer.    This was the form used by StatLog.
 
 Attribute 1:  (qualitative)
 	       Status of existing checking account
-               A11 :      ... <    0 DM
+               A11 :      ... <    0 DM 
 	       A12 : 0 <= ... <  200 DM
 	       A13 :      ... >= 200 DM /
 		     salary assignments for at least 1 year
                A14 : no checking account
+			
+			A11 = 0
+			A12 = 1
+			A13 = 2
+			A14 = 3
 
 Attribute 2:  (numerical)
 	      Duration in month
@@ -51,6 +56,12 @@ Attribute 3:  (qualitative)
               A33 : delay in paying off in the past
 	      A34 : critical account/
 		    other credits existing (not at this bank)
+
+		A30 = 0
+		A31 = 1
+		A32 = 2
+		A33 = 3
+		A34 = 4
 
 Attribute 4:  (qualitative)
 	      Purpose
@@ -66,6 +77,18 @@ Attribute 4:  (qualitative)
 	      A49 : business
 	      A410 : others
 
+		  A40 : 0
+	      A41 : 1
+	      A42 : 2
+	      A43 : 3
+	      A44 : 4
+	      A45 : 5
+	      A46 : 6
+	      A47 : 7
+	      A48 : 8
+	      A49 : 9
+	      A410 : 10
+
 Attribute 5:  (numerical)
 	      Credit amount
 
@@ -77,6 +100,12 @@ Attibute 6:  (qualitative)
 	      A64 :          .. >= 1000 DM
               A65 :   unknown/ no savings account
 
+		A61 = 1
+		A62 = 2
+		A63 = 3
+		A64 = 4
+		A65 = 5
+
 Attribute 7:  (qualitative)
 	      Present employment since
 	      A71 : unemployed
@@ -84,6 +113,12 @@ Attribute 7:  (qualitative)
 	      A73 : 1  <= ... < 4 years  
 	      A74 : 4  <= ... < 7 years
 	      A75 :       .. >= 7 years
+
+		  A71 = 1
+		  A72 = 2
+		  A73 = 3
+		  AT4 = 4
+		  AT5 = 5
 
 Attribute 8:  (numerical)
 	      Installment rate in percentage of disposable income
@@ -96,12 +131,22 @@ Attribute 9:  (qualitative)
 	      A94 : male   : married/widowed
 	      A95 : female : single
 
+			A91 : male   : divorced/separated
+	      A92 : female : divorced/separated/married
+              A93 : male   : single
+	      A94 : male   : married/widowed
+	      A95
+
+
 Attribute 10: (qualitative)
 	      Other debtors / guarantors
 	      A101 : none
 	      A102 : co-applicant
 	      A103 : guarantor
 
+	A101 = 1
+	A102 = 2
+	A103 = 3
 Attribute 11: (numerical)
 	      Present residence since
 
@@ -113,6 +158,10 @@ Attribute 12: (qualitative)
               A123 : if not A121/A122 : car or other, not in attribute 6
 	      A124 : unknown / no property
 
+		A121 = 1
+		A122 = 2
+		A123 = 3
+		A124 = 4 
 Attribute 13: (numerical)
 	      Age in years
 
@@ -122,11 +171,19 @@ Attribute 14: (qualitative)
 	      A142 : stores
 	      A143 : none
 
+		  A141 = 1
+		  A142 = 2
+		  A143 = 3
+
 Attribute 15: (qualitative)
 	      Housing
 	      A151 : rent
 	      A152 : own
 	      A153 : for free
+
+		  A151 = 1
+		  A152 = 2
+		  A153 = 3 
 
 Attribute 16: (numerical)
               Number of existing credits at this bank
@@ -139,6 +196,11 @@ Attribute 17: (qualitative)
 	      A174 : management/ self-employed/
 		     highly qualified employee/ officer
 
+			 A171 = 1
+			 A172 = 2
+			 A173 = 3
+			 A174 = 4
+
 Attribute 18: (numerical)
 	      Number of people being liable to provide maintenance for
 
@@ -147,10 +209,16 @@ Attribute 19: (qualitative)
 	      A191 : none
 	      A192 : yes, registered under the customers name
 
+		  A191 = 1
+		  A192 = 2
+
 Attribute 20: (qualitative)
 	      foreign worker
 	      A201 : yes
 	      A202 : no
+
+		  A201 = 1
+		  A202 = 2
 
 
 
