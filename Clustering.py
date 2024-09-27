@@ -8,11 +8,32 @@ from scipy.stats import entropy
 import math
 
 
-data = pd.read_csv("./dataset/german.csv")
+data = pd.read_csv("./dataset/teste.csv")
 
 X = data.iloc[:, :2].values  
+y = data['Class'].values
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-for n_clusters in (1,2,3,4,5,6,7,8,9,10):
+# Suponha que X são os dados originais (sem redução de dimensionalidade)
+# E y são as classes, onde 1 = Good e 2 = Bad
+
+# Reduzindo para 2 dimensões com PCA
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X)  # Reduz para 2 dimensões
+
+
+
+# Visualizando as classes reais (Good/Bad)
+plt.figure(figsize=(8, 6))
+sns.scatterplot(x=X_pca[:, 0], y=X_pca[:, 1], hue=y, palette={1: 'green', 2: 'red'}, s=100)  # 1=Good, 2=Bad
+plt.title('Classes Reais (Good/Bad)')
+plt.savefig('classes_reais.png')  # Salva a figura como um arquivo PNG
+plt.close()
+
+
+""" for n_clusters in (1,2,3,4,5,6,7,8,9,10):
     for max_iter in (100,200,300,400,500):
         kmeans = KMeans(n_clusters=n_clusters, max_iter=max_iter, random_state=0)
         kmeans.fit(X)
@@ -42,4 +63,4 @@ for n_clusters in (2, 3, 4, 5, 6):
 
         labels = agnes.labels_
 
-        print("Labels:", labels)
+        print("Labels:", labels) """
